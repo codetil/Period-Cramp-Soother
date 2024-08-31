@@ -21,7 +21,7 @@ import { cn } from '@/lib/utils'
 export function CommandMenu({
   data,
   ...props
-}: DialogProps & { data: SettingsQueryResult }) {
+}: DialogProps & { data: any }) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
   const { setTheme } = useTheme()
