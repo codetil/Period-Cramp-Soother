@@ -8,6 +8,7 @@ import BatteryLife from '@/components/BatteryLife'
 import MeditationExercises from '@/components/MeditationExercises'
 import PeriodTracker from '@/components/PeriodTracker'
 import Recommendations from '@/components/Recommendations'
+import Maxw from '@/components/ui/wifi-page'
 
 export default function Dashboard() {
   const [intensityLevel, setIntensityLevel] = useState(0)
@@ -62,13 +63,17 @@ export default function Dashboard() {
         </CardContent>
       </Card>
       <Card>
-        <CardHeader>
-          <CardTitle>Update Data</CardTitle>
+      <CardHeader>
+          <CardTitle>WiFi Connection</CardTitle>
         </CardHeader>
         <CardContent>
-          <Button onClick={updateData}>Simulate Data Update</Button>
+        <Maxw />
         </CardContent>
+
       </Card>
+        
+        
+      
     </div>
   )
 }
