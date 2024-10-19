@@ -5,7 +5,7 @@ export default function Recommendations({ intensityLevel }: { intensityLevel: nu
     } else if (level <= 7) {
       return ['Apply heat', 'Take a warm bath', 'Practice deep breathing']
     } else {
-      return ['Rest', 'Use pain relief medication', 'Contact your healthcare provider if severe']
+      return ['Rest', 'Drink water', 'Contact your healthcare provider if severe']
     }
   }
 

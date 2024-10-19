@@ -9,7 +9,7 @@ export default function Header() {
     <header>
       <nav className="flex items-center gap-4 text-sm lg:gap-6 justify-between py-1">
         <Link href="/" className="text-2xl font-bold py-2">
-          Period Cramp Soother
+          PCS
         </Link>
         <div className="space-x-4">
           <Link href="/dashboard">

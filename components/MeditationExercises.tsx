@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 export default function MeditationExercises() {
   const exercises = [
     { name: 'Deep Breathing', duration: '5 min' },
-    { name: 'Body Scan', duration: '10 min' },
+    { name: 'Yoga', duration: '10 min' },
     { name: 'Guided Relaxation', duration: '15 min' },
   ]
 
