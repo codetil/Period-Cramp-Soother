@@ -9,7 +9,7 @@ export default function IntensityMonitor({ level }: { level: number }) {
   return (
     <><div>
       <Progress value={level * 10} className="w-full" />
-      <p className="mt-2 text-center">Current Intensity: {level}/10</p>
+      <p className="mt-2 text-center">Current Frequency: {level}/10</p>
     </div><div className="mb-6">
         <h2 className="text-lg font-semibold mb-2 text-primary">Intensity Level</h2>
         <Slider

@@ -9,7 +9,7 @@ import { LogoI } from "./Logo";
 import { Icons } from "./icons";
 import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 interface NavLink {
   title: string;
@@ -18,6 +18,10 @@ interface NavLink {
 }
 
 export const NAVLINKS: NavLink[] = [
+  {
+    title: "Dashboard",
+    href: "/dashboard"
+  }
 ];
 
 export function Navbar() {
