@@ -49,9 +49,12 @@ export function Navbar() {
                 <Icons.gitHub className="size-5" />
               </Link>
               <ModeToggle />
+              <div className="flex items-center mx-2">
               <SignedIn>
                <UserButton />
               </SignedIn>
+              </div>
+
             </div>
           </div>
         </div>
