@@ -10,10 +10,10 @@ export default function Home() {
         Track your intensity levels, battery life, and receive personalized recommendations.
       </p>
       <div className="flex space-x-4">
-        <Link href="/login">
+        <Link href="/sign-in">
           <Button>Login</Button>
         </Link>
-        <Link href="/register">
+        <Link href="/sign-up">
           <Button variant="outline">Register</Button>
         </Link>
       </div>

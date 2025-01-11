@@ -9,6 +9,7 @@ import { LogoI } from "./Logo";
 import { Icons } from "./icons";
 import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 interface NavLink {
   title: string;
@@ -48,6 +49,12 @@ export function Navbar() {
                 <Icons.gitHub className="size-5" />
               </Link>
               <ModeToggle />
+               <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+               <UserButton />
+              </SignedIn>
             </div>
           </div>
         </div>

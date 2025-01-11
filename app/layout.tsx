@@ -33,12 +33,6 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <SignedOut>
-             <SignInButton />
-            </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
          <Navbar />
          <main className="container mx-auto px-4 py-8">
           {children}
