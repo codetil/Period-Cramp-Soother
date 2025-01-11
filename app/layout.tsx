@@ -10,6 +10,7 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -37,6 +38,7 @@ export default function RootLayout({
          <main className="container mx-auto px-4 py-8">
           {children}
          </main>
+         <Analytics/>
          <Footer />
         </ThemeProvider>
       </body>
