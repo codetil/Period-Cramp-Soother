@@ -1,7 +1,6 @@
 'use client'
-
-import { GitBranch } from "lucide-react"
 import { useState } from "react"
+import { Cannabis } from 'lucide-react';
 
 export function LogoI() {
   const [isHovered, setIsHovered] = useState(false)
@@ -13,10 +12,9 @@ export function LogoI() {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`relative transition-transform duration-300 ease-in-out ${isHovered ? 'rotate-180' : ''}`}>
-        <GitBranch className="h-6 w-6" />
+        <Cannabis className="h-6 w-6" />
       </div>
       
-      </div>
-    
+    </div>
   )
 }
