@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react"
-import { Cannabis } from 'lucide-react';
+import { Footprints } from 'lucide-react';
 
 export function LogoI() {
   const [isHovered, setIsHovered] = useState(false)
@@ -12,7 +12,7 @@ export function LogoI() {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className={`relative transition-transform duration-300 ease-in-out ${isHovered ? 'rotate-180' : ''}`}>
-        <Cannabis className="h-6 w-6" />
+        <Footprints className="h-6 w-6" />
       </div>
       
     </div>
