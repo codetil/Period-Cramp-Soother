@@ -49,9 +49,6 @@ export function Navbar() {
                 <Icons.gitHub className="size-5" />
               </Link>
               <ModeToggle />
-               <SignedOut>
-                <SignInButton />
-              </SignedOut>
               <SignedIn>
                <UserButton />
               </SignedIn>
