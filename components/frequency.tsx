@@ -4,7 +4,7 @@ import { useState } from 'react'
 import DeviceStatus from '@/components/device-status'
 import { Button } from "@/components/ui/button"
 
-export default function frequency() {
+export default function Frequency() {
   const [frequency, setFrequency] = useState(40)
 
   const levels = [
