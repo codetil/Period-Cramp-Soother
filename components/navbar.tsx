@@ -42,7 +42,7 @@ export function Navbar() {
             
             <div className="flex ml-2.5 sm:ml-0">
               <Link
-                href="https://github.com/spaciousejar/learn-git-with-me.git"
+                href="https://github.com/codetil/Period-Cramp-Soother"
                 className={buttonVariants({ variant: "ghost", size: "icon" })}
               >
                 <Icons.gitHub className="size-5" />
