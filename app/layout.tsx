@@ -3,13 +3,7 @@ import './globals.css'
 import { Navbar } from '@/components/navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from "@/components/theme-provider"
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
