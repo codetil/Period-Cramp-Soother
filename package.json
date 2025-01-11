@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.9",
     "@nivo/bar": "^0.87.0",
     "@nivo/line": "^0.87.0",
     "@prisma/client": "^5.19.0",

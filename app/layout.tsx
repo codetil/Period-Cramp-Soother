@@ -3,6 +3,13 @@ import './globals.css'
 import { Navbar } from '@/components/navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from "@/components/theme-provider"
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,6 +24,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
        <ThemeProvider
@@ -25,6 +33,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <SignedOut>
+             <SignInButton />
+            </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
          <Navbar />
          <main className="container mx-auto px-4 py-8">
           {children}
@@ -33,5 +47,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   )
 }
