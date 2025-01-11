@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
+import { Navbar } from '@/components/navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -25,7 +25,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-         <Header />
+         <Navbar />
          <main className="container mx-auto px-4 py-8">
           {children}
          </main>
