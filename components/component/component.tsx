@@ -19,7 +19,7 @@ export function Component() {
           <h1 className="font-semibold text-3xl">Period Cramp Soother</h1>
           <div className="flex items-center text-sm gap-2">
             <div className="text-muted-foreground flex items-center gap-2">
-              <span className="inline-block w-2 h-2 bg-[#09CE6B] rounded-full animate-ping duration-[5000]" />
+              <span className="inline-block w-2 h-2 bg-[#09CE6B] rounded-full animate-ping duration-5000" />
               Cramp Intensity: Moderate
             </div>
             <Separator orientation="vertical" className="h-5" />
