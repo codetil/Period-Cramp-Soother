@@ -16,7 +16,7 @@ export function NavSecondary({
   items: {
     title: string
     url: string
-    icon: LucideIcon
+    icon: React.ComponentType
   }[]
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
   return (
