@@ -21,24 +21,24 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body className={inter.className}>
-       <ThemeProvider
+      <html lang="en" suppressHydrationWarning>
+        <body className={inter.className}>
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-         <Navbar />
-         <main className="container mx-auto px-4 py-8">
-          {children}
-         </main>
-         <Analytics/>
-         <SpeedInsights/>
-         <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+            <Navbar />
+            <main className="container mx-auto px-4 py-8">
+              {children}
+            </main>
+            <Analytics />
+            <SpeedInsights />
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
     </ClerkProvider>
   )
 }
