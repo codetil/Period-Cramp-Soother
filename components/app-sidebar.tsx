@@ -36,7 +36,7 @@ const data = {
   navMain: [
     {
       title: "Device",
-      url: "#",
+      url: "/dashboard",
       icon: SquareTerminal,
       isActive: true,
       items: [
@@ -55,8 +55,8 @@ const data = {
       ],
     },
     {
-      title: "Models",
-      url: "#",
+      title: "Chatbot",
+      url: "/chatbot",
       icon: Bot,
       items: [
         {
