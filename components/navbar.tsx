@@ -1,4 +1,4 @@
-"use client"; 
+'use client' 
 import { ModeToggle } from "@/components/mode-toggle";
 import { MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
