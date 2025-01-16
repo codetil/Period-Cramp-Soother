@@ -1,37 +1,28 @@
-# This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Period Cramp Soother
 
-## Getting Started
+A web application designed to provide relief and comfort to individuals experiencing menstrual cramps. The application offers a range of features to help users manage their symptoms, track their cycles, and access resources for better menstrual health.
 
+## Features
 
-First, run the development server:
+* **Dashboard**: A personalized dashboard to track menstrual cycles, symptoms, and mood.
+* **Chatbot**: An AI-powered chatbot that offers personalized advice and support for managing menstrual symptoms and overall well-being.
+* **Period Tracker Recommendation**: A feature that provides tailored recommendations for tracking menstrual cycles, including period start and end dates, ovulation, and fertile windows based on user input and historical data.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Frontend: Built using Nextjs, TypeScript, and CSS-in-JS styling.
+* Backend: Utilizes a RESTful API built with Node.js, prisma for data storage.
+* Authentication: Implements user authentication and authorization using OAuth and JWT.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Contributions are welcome! If you're interested in helping us improve the Period Cramp Soother, please follow these steps:
 
-## Learn More
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Submit a pull request.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Period Cramp Soother is licensed under the MIT License.
