@@ -4,14 +4,12 @@ import * as React from "react"
 import {
   BookOpen,
   Bot,
-  Command,
   Frame,
   LifeBuoy,
   Map,
-  PieChart,
   Send,
-  Settings2,
   SquareTerminal,
+  Book,
 } from "lucide-react"
 import { useUser } from "@clerk/nextjs"
 
@@ -19,6 +17,7 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { ModeToggle } from "./mode-toggle"
 import {
   Sidebar,
   SidebarContent,
@@ -28,6 +27,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { LogoI } from "./Logo"
 
 const data = {
   user: {
@@ -36,42 +36,24 @@ const data = {
   navMain: [
     {
       title: "Device",
-      url: "#",
+      url: "/dashboard",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Device control",
+          url: "/dashboard",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
+          title: "Period tracker",
+          url: "/dashboard",
         },
       ],
     },
     {
-      title: "Models",
-      url: "#",
+      title: "Chatbot",
+      url: "/chatbot",
       icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
     },
     {
       title: "Documentation",
@@ -96,29 +78,6 @@ const data = {
         },
       ],
     },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
   ],
   navSecondary: [
     {
@@ -139,12 +98,12 @@ const data = {
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
+      name: "blog",
       url: "#",
-      icon: PieChart,
+      icon: Book,
     },
     {
-      name: "Travel",
+      name: "Nearby Washrooms",
       url: "#",
       icon: Map,
     },
@@ -167,12 +126,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Command className="size-4" />
-                </div>
+                <LogoI/>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">Period Cramp Soother</span>
-                  <span className="truncate text-xs"></span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -182,6 +138,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+         <ModeToggle />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
