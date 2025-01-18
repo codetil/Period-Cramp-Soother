@@ -19,6 +19,7 @@ import { Navbar } from '@/components/navbar';
 import Footer from '@/components/Footer';
 import Device from "@/components/device"
 import PeriodTracker from "@/components/PeriodTracker"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function Page() {
   const pathname = usePathname();
@@ -48,13 +49,16 @@ export default function Page() {
           </header>
           <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid auto-rows-min gap-4 md:grid-cols-2">
-              <div className="aspect-video rounded-xl bg-muted/50" >
+            <Card >
+              <CardContent>
               <Device/>
+
+              </CardContent>
+              
+            </Card>
+            <PeriodTracker/>
               </div>
-              <div className="aspect-video rounded-xl bg-muted/50">
-              <PeriodTracker/>
-              </div>
-              </div>   
+               
           </div>
           <Footer/>
         </SidebarInset>
