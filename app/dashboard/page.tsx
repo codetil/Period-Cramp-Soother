@@ -54,8 +54,7 @@ export default function Page() {
               <div className="aspect-video rounded-xl bg-muted/50">
               <PeriodTracker/>
               </div>
-              </div>
-            
+              </div>   
           </div>
           <Footer/>
         </SidebarInset>
