@@ -18,6 +18,7 @@ import { usePathname } from 'next/navigation';
 import { Navbar } from '@/components/navbar';
 import Footer from '@/components/Footer';
 import Device from "@/components/device"
+import PeriodTracker from "@/components/PeriodTracker"
 
 export default function Page() {
   const pathname = usePathname();
@@ -50,11 +51,11 @@ export default function Page() {
               <div className="aspect-video rounded-xl bg-muted/50" >
               <Device/>
               </div>
-              <div className="aspect-video rounded-xl bg-muted/50" />
-              <div className="aspect-video rounded-xl bg-muted/50" />
+              <div className="aspect-video rounded-xl bg-muted/50">
+              <PeriodTracker/>
+              </div>
+              </div>
             
-          </div>
-            <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
           </div>
           <Footer/>
         </SidebarInset>
