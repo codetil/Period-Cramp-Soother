@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.1.2",
+    "@ai-sdk/openai": "^1.1.12",
     "@clerk/nextjs": "^6.11.3",
     "@nivo/bar": "^0.88.0",
     "@nivo/line": "^0.88.0",
