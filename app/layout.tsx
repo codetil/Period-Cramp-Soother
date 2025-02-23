@@ -10,6 +10,16 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Period Cramp Soother',
   description: 'Manage and alleviate period cramps with ease',
+  openGraph: {
+    images: [
+      {
+        url: 'og.png',
+        width: 800,
+        height: 600,
+        alt: 'Period Cramp Soother',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
