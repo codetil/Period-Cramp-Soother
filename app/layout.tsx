@@ -10,6 +10,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Period Cramp Soother',
   description: 'Manage and alleviate period cramps with ease',
+  site: {
+    webmanifest: '/site.webmanifest',
+    favicon: '/favicon.ico',
+    logo: '/logo.png',
+  },
   openGraph: {
     images: [
       {
