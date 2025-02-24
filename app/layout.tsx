@@ -25,6 +25,7 @@ export const metadata = {
       },
     ],
   },
+  metadataBase: new URL('https://period-cramp-soother.vercel.app'),
 }
 
 export default function RootLayout({
