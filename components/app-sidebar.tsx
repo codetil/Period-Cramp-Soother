@@ -12,6 +12,8 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  Toilet,
+  Book,
 } from "lucide-react"
 
 import { useUser } from "@clerk/nextjs"
@@ -28,6 +30,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { Footprints } from "lucide-react"
+import { title } from "process"
 
 // This is sample data.
 const data = {
@@ -65,73 +68,36 @@ const data = {
       url: "/chatbot",
       icon: Bot,
     },
+
     {
-      title: "Documentation",
-      url: "/docs",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "/docs",
-        },
-        {
-          title: "Get Started",
-          url: "/docs",
-        },
-        {
-          title: "Tutorials",
-          url: "/docs",
-        },
-        {
-          title: "Changelog",
-          url: "/docs",
-        },
-      ],
+      title : "Near by Washroom",
+      url: "#",
+      icon: Toilet,
     },
-    /*
+    
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
     },
-    */
+    
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "Blogs",
       url: "#",
-      icon: Frame,
+      icon: Book,
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
+      name: "Documentation",
+      url: "/docs",
+      icon: BookOpen,
     },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
+
   ],
 }
+
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useUser()
