@@ -48,10 +48,10 @@ export default function Page() {
             </div>
           </div>
         </header>
-          <div className="flex justify-center flex-1 flex-col py-7 ml-20">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1">
+          <div className="flex justify-center flex-1 flex-col pt-4 px-4 sm:px-6 md:px-8 lg:px-10">
+
               <UserProfile />
-            </div>
+        
           </div>
         </SidebarInset>
       </SidebarProvider>
