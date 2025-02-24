@@ -1,5 +1,4 @@
-'use client'
-import { AppSidebar } from "@/components/app-sidebar"
+import { ModeToggle } from "@/components/mode-toggle"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,17 +13,13 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { usePathname } from 'next/navigation';
-import { ModeToggle } from "@/components/mode-toggle"
-import { ChatForm } from "@/components/chat-form"
+import { AppSidebar } from "@/components/app-sidebar"
 
-export default function Page() {
-  const pathname = usePathname();
-
+export default function Home() {
   return (
-      <SidebarProvider>
-        <AppSidebar />
-        <SidebarInset>
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2 px-4 w-full">
             <SidebarTrigger className="-ml-1" />
@@ -33,12 +28,12 @@ export default function Page() {
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink href="#">
-                    AI Chatbot
+                    Building Your Application
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Ask Anything</BreadcrumbPage>
+                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -47,10 +42,15 @@ export default function Page() {
             </div>
           </div>
         </header>
-          <div className="flex flex-1 flex-col">
-            <ChatForm />
+        <div className="flex flex-1 flex-col gap-4 p-4">
+          
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            
+            
           </div>
-        </SidebarInset>
-      </SidebarProvider>
+          
+        </div>
+      </SidebarInset>
+    </SidebarProvider>
   )
 }

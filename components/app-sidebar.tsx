@@ -2,95 +2,117 @@
 
 import * as React from "react"
 import {
+  AudioWaveform,
   BookOpen,
   Bot,
+  Command,
   Frame,
-  LifeBuoy,
+  GalleryVerticalEnd,
   Map,
-  Send,
+  PieChart,
+  Settings2,
   SquareTerminal,
-  Book,
 } from "lucide-react"
+
 import { useUser } from "@clerk/nextjs"
 
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
-import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
-import { ModeToggle } from "./mode-toggle"
+import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
+  SidebarRail,
 } from "@/components/ui/sidebar"
-import { LogoI } from "./Logo"
-import { Max } from "./wifibutton"
+import { Footprints } from "lucide-react"
 
+// This is sample data.
 const data = {
-  user: {
-
-  },
+  
+  teams: [
+    {
+      name: "Period Cramp Soother",
+      logo: Footprints,
+      plan: "Basic",
+    },
+  ],
   navMain: [
     {
-      title: "Device",
+      title: "Playground",
       url: "/dashboard",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "Device control",
+          title: "Dashboard",
           url: "/dashboard",
         },
         {
-          title: "Period tracker",
+          title: "Period Tracker",
           url: "/dashboard",
         },
-      ],
+        {
+          title: "Device Control",
+          url: "/dashboard",
+        },
+      ]
     },
     {
-      title: "Chatbot",
+      title: "AI Chatbot",
       url: "/chatbot",
       icon: Bot,
     },
     {
       title: "Documentation",
-      url: "#",
+      url: "/try",
       icon: BookOpen,
       items: [
         {
           title: "Introduction",
-          url: "#",
+          url: "/try",
         },
         {
           title: "Get Started",
-          url: "#",
+          url: "/try",
         },
         {
           title: "Tutorials",
-          url: "#",
+          url: "/try",
         },
         {
           title: "Changelog",
+          url: "/try",
+        },
+      ],
+    },
+    /*
+    {
+      title: "Settings",
+      url: "#",
+      icon: Settings2,
+      items: [
+        {
+          title: "General",
+          url: "#",
+        },
+        {
+          title: "Team",
+          url: "#",
+        },
+        {
+          title: "Billing",
+          url: "#",
+        },
+        {
+          title: "Limits",
           url: "#",
         },
       ],
     },
-  ],
-  navSecondary: [
-    {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
-    },
-    {
-      title: "Feedback",
-      url: "#",
-      icon: Send,
-    },
+    */
   ],
   projects: [
     {
@@ -99,12 +121,12 @@ const data = {
       icon: Frame,
     },
     {
-      name: "blog",
+      name: "Sales & Marketing",
       url: "#",
-      icon: Book,
+      icon: PieChart,
     },
     {
-      name: "Nearby Washrooms",
+      name: "Travel",
       url: "#",
       icon: Map,
     },
@@ -119,33 +141,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     email: user.emailAddresses[0]?.emailAddress || "",
     avatar: user.imageUrl || ""
   } : undefined
-
   return (
-    <Sidebar variant="inset" {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <a href="#">
-                <LogoI/>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Period Cramp Soother</span>
-                </div>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
-         <ModeToggle />
-         <Max/>
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={userData} />
+      <NavUser user={userData} />
       </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   )
 }
