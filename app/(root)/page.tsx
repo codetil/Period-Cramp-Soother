@@ -13,8 +13,8 @@ export default function Home() {
         <Link href="/sign-in">
           <Button>Login</Button>
         </Link>
-        <Link href="/sign-up">
-          <Button variant="outline">Register</Button>
+        <Link href="/dashboard">
+          <Button variant="outline">Dashboard</Button>
         </Link>
       </div>
     </div>
