@@ -17,6 +17,7 @@ import {
 import { usePathname } from 'next/navigation';
 import { Navbar } from '@/components/navbar';
 import Footer from '@/components/Footer';
+import { ChatForm } from "@/components/chat-form"
 
 export default function Page() {
   const pathname = usePathname();
@@ -32,7 +33,7 @@ export default function Page() {
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem className="hidden md:block">
-                    <BreadcrumbLink href="#">
+                    <BreadcrumbLink href="/chatbot">
                       Chatbot
                     </BreadcrumbLink>
                   </BreadcrumbItem>
@@ -44,10 +45,9 @@ export default function Page() {
               </Breadcrumb>
             </div>
           </header>
-          <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-            
+          <div className="flex flex-1 flex-col">
+            <ChatForm />
           </div>
-          <Footer/>
         </SidebarInset>
       </SidebarProvider>
   )
