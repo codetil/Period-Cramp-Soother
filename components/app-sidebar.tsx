@@ -67,24 +67,24 @@ const data = {
     },
     {
       title: "Documentation",
-      url: "/try",
+      url: "/docs",
       icon: BookOpen,
       items: [
         {
           title: "Introduction",
-          url: "/try",
+          url: "/docs",
         },
         {
           title: "Get Started",
-          url: "/try",
+          url: "/docs",
         },
         {
           title: "Tutorials",
-          url: "/try",
+          url: "/docs",
         },
         {
           title: "Changelog",
-          url: "/try",
+          url: "/docs",
         },
       ],
     },
