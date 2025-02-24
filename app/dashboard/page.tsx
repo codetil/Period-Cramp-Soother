@@ -20,6 +20,7 @@ import Footer from '@/components/Footer';
 import Device from "@/components/device"
 import PeriodTracker from "@/components/PeriodTracker"
 import { Card, CardContent } from "@/components/ui/card"
+import { UserButton } from "@clerk/nextjs"
 
 export default function Page() {
   const pathname = usePathname();
@@ -47,6 +48,7 @@ export default function Page() {
             </Breadcrumb>
             <div className="flex items-center gap-2 ml-auto">
               <ModeToggle />
+              <UserButton/>
             </div>
           </div>
         </header>

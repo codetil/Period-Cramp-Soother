@@ -14,6 +14,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
+import { UserButton } from "@clerk/nextjs"
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
             </Breadcrumb>
             <div className="flex items-center gap-2 ml-auto">
               <ModeToggle />
+              <UserButton/>
             </div>
           </div>
         </header>

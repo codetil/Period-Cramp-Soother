@@ -17,6 +17,7 @@ import {
 import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
 import { ChatForm } from "@/components/chat-form"
+import { UserButton } from '@clerk/nextjs'
 
 export default function Page() {
   const pathname = usePathname();
@@ -44,6 +45,7 @@ export default function Page() {
             </Breadcrumb>
             <div className="flex items-center gap-2 ml-auto">
               <ModeToggle />
+              <UserButton />
             </div>
           </div>
         </header>
