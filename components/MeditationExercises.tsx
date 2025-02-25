@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
+interface Exercise {
+  name: string;
+  duration: number;
+  audio: string;
+  video: string;
+}
+
 const exercises = [
   { name: "Mindfulness Meditation", duration: 10, audio: "/audio/mindfulness.mp3", video: "https://www.youtube.com/embed/w6T02g5hnT4" },
   { name: "Loving-Kindness Meditation", duration: 20, audio: "/audio/loving_kindness.mp3", video: "https://www.youtube.com/embed/3CpRIxVztw8" },
@@ -12,13 +19,13 @@ const exercises = [
 ];
 
 export default function MeditationExercises() {
-  const [selectedExercise, setSelectedExercise] = useState(null);
-  const [timeLeft, setTimeLeft] = useState(null);
-  const [isRunning, setIsRunning] = useState(false);
-  const [audio, setAudio] = useState(null);
+  const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
+  const [timeLeft, setTimeLeft] = useState<number>(0);
+  const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    let timer;
+    let timer: NodeJS.Timeout;
     if (isRunning && timeLeft > 0) {
       timer = setInterval(() => {
         setTimeLeft((prevTime) => prevTime - 1);
@@ -29,10 +36,20 @@ export default function MeditationExercises() {
         audio.pause();
       }
     }
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    };
   }, [isRunning, timeLeft, audio]);
 
-  const startMeditation = (exercise) => {
+  const startMeditation = (exercise: Exercise) => {
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
     setSelectedExercise(exercise);
     setTimeLeft(exercise.duration * 60);
     setIsRunning(true);
@@ -46,7 +63,7 @@ export default function MeditationExercises() {
     if (audio) {
       isRunning ? audio.pause() : audio.play();
     }
-  };
+  }; 
 
   return (
     <div className="p-6 max-w-lg mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-4xl">

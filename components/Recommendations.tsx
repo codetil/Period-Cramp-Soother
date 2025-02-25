@@ -72,7 +72,7 @@ export function Rec({ userData }: { userData?: { name: string; email: string; av
             <ul className="space-y-4 ">
               <li>Track your symptoms regularly for better health management</li>
               <li>Consult with healthcare providers for personalized medical advice</li>
-              <li>Everyone's body is different - what works for others might not work for you</li>
+              <li>Everyone&apos;s body is different - what works for others might not work for you</li>
               <li>Consider using health tracking apps for more detailed monitoring</li>
             </ul>
           </div>
