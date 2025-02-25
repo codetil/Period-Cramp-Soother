@@ -18,7 +18,7 @@ export default function Device() {
         <div className="flex items-center justify-center space-x-4">
 
           <div className="flex flex-col items-center p-6 rounded-lg w-full max-w-sm">
-            <h2 className="text-xl font-semibold mb-4">Control Panel</h2>
+            <p className="text-lg sm:text-xl font-semibold mb-4 text-center">Note: Both devices connect with the same Wi-Fi.</p>
             <div className="flex flex-col space-y-4">
                 <Button
                   onClick={() => window.location.href = 'http://192.168.0.100'}

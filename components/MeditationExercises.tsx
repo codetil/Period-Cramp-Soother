@@ -6,73 +6,54 @@ import { Card, CardContent } from "@/components/ui/card";
 interface Exercise {
   name: string;
   duration: number;
-  audio: string;
   video: string;
 }
 
-const exercises = [
-  { name: "Mindfulness Meditation", duration: 10, audio: "/audio/mindfulness.mp3", video: "https://www.youtube.com/embed/w6T02g5hnT4" },
-  { name: "Loving-Kindness Meditation", duration: 20, audio: "/audio/loving_kindness.mp3", video: "https://www.youtube.com/embed/3CpRIxVztw8" },
-  { name: "Breath Awareness", duration: 5, audio: "/audio/breath_awareness.mp3", video: "https://www.youtube.com/embed/YFSc7Ck0Ao0" },
-  { name: "Yoga", duration: 10, audio: "/audio/yoga.mp3", video: "https://www.youtube.com/embed/v7AYKMP6rOE" },
-  { name: "Guided Relaxation", duration: 15, audio: "/audio/guided_relaxation.mp3", video: "https://www.youtube.com/embed/2ZBNcl9r6nM" },
+const exercises: Exercise[] = [
+  { name: "Mindfulness Meditation", duration: 10, video: "https://www.youtube.com/embed/w6T02g5hnT4" },
+  { name: "Loving-Kindness Meditation", duration: 20, video: "https://www.youtube.com/embed/3CpRIxVztw8" },
+  { name: "Breath Awareness", duration: 5, video: "https://www.youtube.com/embed/YFSc7Ck0Ao0" },
+  { name: "Yoga", duration: 10, video: "https://www.youtube.com/embed/v7AYKMP6rOE" },
+  { name: "Guided Relaxation", duration: 15, video: "https://www.youtube.com/embed/2ZBNcl9r6nM" },
 ];
 
 export default function MeditationExercises() {
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: NodeJS.Timeout | undefined;
     if (isRunning && timeLeft > 0) {
       timer = setInterval(() => {
         setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeLeft === 0) {
       setIsRunning(false);
-      if (audio) {
-        audio.pause();
-      }
     }
     return () => {
       clearInterval(timer);
-      if (audio) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
     };
-  }, [isRunning, timeLeft, audio]);
+  }, [isRunning, timeLeft]);
 
   const startMeditation = (exercise: Exercise) => {
-    if (audio) {
-      audio.pause();
-      audio.currentTime = 0;
-    }
     setSelectedExercise(exercise);
     setTimeLeft(exercise.duration * 60);
     setIsRunning(true);
-    const newAudio = new Audio(exercise.audio);
-    setAudio(newAudio);
-    newAudio.play();
   };
 
   const pauseTimer = () => {
-    setIsRunning(!isRunning);
-    if (audio) {
-      isRunning ? audio.pause() : audio.play();
-    }
+    setIsRunning((prev) => !prev);
   }; 
 
   return (
-    <div className="p-6 max-w-lg mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
+    <div className="max-w-lg mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
       <h1 className="text-2xl font-bold text-center mb-4">Meditation Exercises</h1>
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {exercises.map((exercise) => (
           <Card
             key={exercise.name}
-            className="p-4 cursor-pointer hover:bg-gray-100"
+            className="p-4 cursor-pointer hover:bg-gray-950"
             onClick={() => startMeditation(exercise)}
           >
             <CardContent>
@@ -98,7 +79,6 @@ export default function MeditationExercises() {
               allowFullScreen
             ></iframe>
           </div>
-          <Button className="mt-4" onClick={pauseTimer}>{isRunning ? "Pause" : "Resume"} Timer</Button>
         </div>
       )}
     </div>
