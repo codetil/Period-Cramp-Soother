@@ -67,6 +67,7 @@ export default function MeditationExercises() {
         <div className="mt-6 text-center">
           <h2 className="text-xl font-semibold">{selectedExercise.name}</h2>
           <p className="text-lg text-gray-600">Time Left: {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, "0")}</p>
+          <Button className="mt-4" onClick={pauseTimer}>{isRunning ? "Pause" : "Resume"} Timer</Button>
           <BreathingGuide />
           <div className="mt-4 flex justify-center">
             <iframe
