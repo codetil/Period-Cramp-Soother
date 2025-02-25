@@ -16,11 +16,18 @@ import {
 } from "@/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
-import { UserButton, UserProfile } from '@clerk/nextjs'
-import Recommendations from "@/components/Recommendations"
+import { UserButton, useUser,UserProfile } from '@clerk/nextjs'
+import { Rec } from "@/components/Recommendations"
 
 export default function Page() {
   const pathname = usePathname();
+  const { user } = useUser(); // Get user data from Clerk
+
+  const userData = user ? {
+    name: user.fullName || "User",
+    email: user.emailAddresses[0]?.emailAddress || "",
+    avatar: user.imageUrl || ""
+  } : undefined;
 
   return (
       <SidebarProvider>
@@ -34,12 +41,12 @@ export default function Page() {
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink href="#">
-                    Settings
+                    Wellness
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Profile</BreadcrumbPage>
+                  <BreadcrumbPage>Recommendations </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -50,9 +57,7 @@ export default function Page() {
           </div>
         </header>
           <div className="flex justify-center flex-1 flex-col pt-4 px-4 sm:px-6 md:px-8 lg:px-10">
-
-              <Recommendations/>
-        
+              <Rec userData={userData} />
           </div>
         </SidebarInset>
       </SidebarProvider>
