@@ -61,7 +61,18 @@ const data = {
           title: "Device Control",
           url: "/dashboard",
         },
+
       ]
+    },
+    {
+      title: "Medication",
+      url: "/medication",
+      icon: Command,
+    },
+    {
+      title: "Recommendation",
+      url: "/rec",
+      icon: PieChart,
     },
     {
       title: "AI Chatbot",
