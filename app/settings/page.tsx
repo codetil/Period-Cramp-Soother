@@ -48,8 +48,10 @@ export default function Page() {
             </div>
           </div>
         </header>
-          <div className="flex justify-center flex-1 flex-col pt-4 px-4 sm:px-6 md:px-8 lg:px-10">
-              <UserProfile routing="hash" />
+          <div className="flex items-center justify-center min-h-screen pt-2">
+
+               <UserProfile routing="hash" />
+             
           </div>
         </SidebarInset>
       </SidebarProvider>
