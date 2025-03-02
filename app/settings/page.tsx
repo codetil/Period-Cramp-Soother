@@ -49,9 +49,7 @@ export default function Page() {
           </div>
         </header>
           <div className="flex justify-center flex-1 flex-col pt-4 px-4 sm:px-6 md:px-8 lg:px-10">
-
-              <UserProfile />
-        
+              <UserProfile routing="hash" />
           </div>
         </SidebarInset>
       </SidebarProvider>

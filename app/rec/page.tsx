@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
-import { UserButton, useUser,UserProfile } from '@clerk/nextjs'
+import { UserButton, useUser } from '@clerk/nextjs'
 import { Rec } from "@/components/Recommendations"
 
 export default function Page() {

@@ -35,21 +35,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <ClerkProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
           >
-            
-            <main className="container mx-auto px-4 py-8">
-              {children}
-            </main>
             <Analytics />
             <SpeedInsights />
-            
+            {children}
           </ThemeProvider>
         </ClerkProvider>
       </body>

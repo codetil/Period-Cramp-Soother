@@ -14,7 +14,7 @@ export const metadata = {
   description: 'Manage and alleviate period cramps with ease',
 }
 
-export default function mainLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode

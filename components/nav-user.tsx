@@ -29,11 +29,13 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { useUser, useClerk, UserProfile } from '@clerk/nextjs'
+import { useUser, useClerk } from '@clerk/nextjs'
+import { useState } from 'react'
 
 export function NavUser({ user }: { user?: { name: string; email: string; avatar: string } }) {
   const { isMobile } = useSidebar()
   const { signOut } = useClerk()
+  const [userProfileOpen, setUserProfileOpen] = useState(false)
 
   return (
     <SidebarMenu>
