@@ -82,7 +82,7 @@ const data = {
 
     {
       title : "Near by Washroom",
-      url: "#",
+      url: "/washroom",
       icon: Toilet,
     },
     
