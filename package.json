@@ -43,7 +43,7 @@
     "next": "^15.2.0",
     "next-themes": "^0.3.0",
     "nextjs": "^0.0.3",
-    "openai": "^4.81.0",
+    "openai": "^4.86.2",
     "react": "^18",
     "react-chatbot-kit": "^2.2.2",
     "react-day-picker": "^8.10.1",
