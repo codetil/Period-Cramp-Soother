@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { ClerkProvider } from '@clerk/nextjs'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Footerdemo } from '@/components/ui/footer-section'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -35,7 +36,7 @@ export default function MainLayout({
             </main>
             <Analytics />
             <SpeedInsights />
-            <Footer />
+            <Footerdemo />
           </ThemeProvider>
         </body>
       </html>
