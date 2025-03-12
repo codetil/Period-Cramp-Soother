@@ -1,11 +1,7 @@
 import { Inter } from 'next/font/google'
 import '@/app/globals.css'
 import { Navbar } from '@/components/navbar'
-import Footer from '@/components/Footer'
 import { ThemeProvider } from "@/components/theme-provider"
-import { ClerkProvider } from '@clerk/nextjs'
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Footerdemo } from '@/components/ui/footer-section'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,7 +17,7 @@ export default function MainLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+
       <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
           <ThemeProvider
@@ -34,12 +30,10 @@ export default function MainLayout({
             <main className="container mx-auto px-4 py-8">
               {children}
             </main>
-            <Analytics />
-            <SpeedInsights />
-            <Footerdemo />
+            <Footerdemo/>
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+
   )
 }
