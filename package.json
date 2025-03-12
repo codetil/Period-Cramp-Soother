@@ -34,7 +34,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.1.0",
     "ai": "^4.1.45",
-    "axios": "^1.7.9",
+    "axios": "^1.8.2",
     "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
