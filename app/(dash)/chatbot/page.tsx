@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
-import { ChatForm } from "@/components/chat-form"
+import { ChatDemo } from "@/components/chat-form"
 import { UserButton } from '@clerk/nextjs'
 
 export default function Page() {
@@ -50,7 +50,7 @@ export default function Page() {
           </div>
         </header>
           <div className="flex flex-1 flex-col">
-            <ChatForm />
+            <ChatDemo />
           </div>
         </SidebarInset>
       </SidebarProvider>
