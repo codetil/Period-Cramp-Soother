@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.1.13",
-    "@clerk/nextjs": "^6.12.0",
+    "@clerk/nextjs": "^6.12.11",
     "@nivo/bar": "^0.88.0",
     "@nivo/line": "^0.88.0",
     "@prisma/client": "^6.4.1",
