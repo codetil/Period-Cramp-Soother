@@ -73,6 +73,9 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 240 4.9% 83.9%;
   }
+  .theme {
+    --animate-shiny-text: shiny-text 8s infinite;
+  }
 }
 
 @layer base {
@@ -84,7 +87,6 @@
   }
   body {
     @apply bg-background text-foreground overscroll-none;
-    /* font-feature-settings: "rlig" 1, "calt" 1; */
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -95,7 +97,6 @@
     }
   }
 
-  /* Custom scrollbar styling. Thanks @pranathiperii. */
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -132,14 +133,12 @@
     @apply absolute -inset-4 shadow-xl rounded-xl border;
   }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .border-grid {
@@ -152,5 +151,25 @@
 
   .container {
     @apply px-4 xl:px-6 mx-auto max-w-screen-2xl;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@theme inline {
+  @keyframes shiny-text {
+  0%, 90%, 100% {
+    background-position: calc(-100% - var(--shiny-width)) 0;
+    }
+  30%, 60% {
+    background-position: calc(100% + var(--shiny-width)) 0;
+    }
   }
 }

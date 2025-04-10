@@ -1,15 +1,16 @@
-import { type CoreMessage, streamText } from "ai"
-import { openai } from "@ai-sdk/openai"
+import { groq } from '@ai-sdk/groq';
+import { streamText } from 'ai';
+
+export const maxDuration = 30;
 
 export async function POST(req: Request) {
-  const { messages }: { messages: CoreMessage[] } = await req.json()
+  const { messages } = await req.json();
 
   const result = streamText({
-    model: openai("gpt-4o-mini"),
-    system: "You are a helpful assistant.",
+    model: groq('llama-3.3-70b-versatile'),
     messages,
-  })
+    system: "You are a wellness assistant for women's health. Provide brief advice on self-care, rest, exercise, hydration, energy, and diet. Be supportive and acknowledge individual differences.",
+  });
 
-  return result.toDataStreamResponse()
+  return result.toDataStreamResponse();
 }
-

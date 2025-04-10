@@ -234,17 +234,12 @@
             <button class="button" onclick="sendCommand(3)">Level 3</button>
             <button class="button" onclick="sendCommand(4)">Level 4</button>
             <button class="button" onclick="sendCommand(5)">Level 5</button>
-            <button class="button" id="ledButton" onclick="toggleLED()">Toggle LED</button>
         </div>
 
         <div class="status">
             <p>
                 <span class="status-label">Device Status:</span>
                 <span class="status-value status-connected" id="deviceStatus">Connected</span>
-            </p>
-            <p>
-                <span class="status-label">Frequency:</span>
-                <span class="status-value" id="frequency">40 Hz</span>
             </p>
         </div>
     </div>
@@ -286,41 +281,69 @@
                 `;
             }
 
+
             function sendCommand(level) {
-                fetch(`/api/set?level=${level}`)
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById("frequency").innerText = `${level * 10} Hz`;
-                        console.log("Response:", data);
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
-                        document.getElementById("deviceStatus").innerText = "Disconnected";
-                        document.getElementById("deviceStatus").style.color = "rgb(239, 68, 68)";
-                    });
-            }
+            fetch(`/set?level=${level}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("frequency").innerText = (level * 10) + " Hz";
+                    console.log("Response:", data);
+                    // Update button states
+                    updateActiveButton(level);
+                    // Update device status to connected
+                    updateDeviceStatus(true);
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    updateDeviceStatus(false);
+                });
+        }
 
-            function toggleLED() {
-                fetch('/api/toggleLED')
-                    .then(response => response.text())
-                    .then(data => {
-                        const ledButton = document.getElementById("ledButton");
-                        ledButton.classList.toggle("active");
-                        console.log(data);
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
-                    });
-            }
+        function updateActiveButton(level) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Add active class to selected button
+            document.querySelectorAll('.button')[level-1].classList.add('active');
+        }
 
-            function updateDate() {
-                const now = new Date();
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                document.getElementById("currentDate").innerText = now.toLocaleDateString('en-US', options);
+        function updateDeviceStatus(connected) {
+            const statusElement = document.getElementById("deviceStatus");
+            if (connected) {
+                statusElement.innerText = "Connected";
+                statusElement.className = "status-value status-connected";
+            } else {
+                statusElement.innerText = "Disconnected";
+                statusElement.style.color = "rgb(239, 68, 68)";
             }
+        }
+
+        function checkDeviceStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    updateDeviceStatus(true);
+                    if (data.level) {
+                        document.getElementById("frequency").innerText = (data.level * 10) + " Hz";
+                        updateActiveButton(data.level);
+                    }
+                })
+                .catch(error => {
+                    console.error("Status check error:", error);
+                    updateDeviceStatus(false);
+                });
+        }
+
+        function updateDate() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("currentDate").innerText = now.toLocaleDateString('en-US', options);
+        }
 
             updateDate();
             setInterval(updateDate, 60000); // Update date every minute
+            setInterval(checkDeviceStatus, 5000); // Check device status every 5 seconds
         });
     </script>
 </body>

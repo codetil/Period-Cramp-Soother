@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import WiFiButton from "../wifi-button"
+import WiFiButton from "@/components/ui/wifi-button"
 import { toast } from "@/hooks/use-toast"
 
 export default function WiFiset() {

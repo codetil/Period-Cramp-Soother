@@ -1,4 +1,5 @@
 import { BentoGrid, type BentoItem } from "@/components/ui/bento-grid"
+import { Bot } from "lucide-react";
 import {
     CheckCircle,
     Clock,
@@ -30,11 +31,11 @@ const itemsSample: BentoItem[] = [
         tags: ["Productivity", "Automation"],
     },
     {
-        title: "Video Recommendations",
+        title: "AI Chatbot",
         meta: "12 new",
-        description: "Personalized video recommendations based on your preferences",
-        icon: <Video className="w-4 h-4 text-purple-500" />,
-        tags: ["Videos", "AI"],
+        description: "Your personal wellness assistant providing expert guidance on women's health and period care",
+        icon: <Bot className="w-4 h-4 text-purple-500" />,
+        tags: ["Chatbot", "AI"],
         colSpan: 2,
     },
     {
