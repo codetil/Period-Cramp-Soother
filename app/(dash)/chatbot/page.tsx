@@ -14,14 +14,11 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
 import { UserButton } from '@clerk/nextjs'
 import { ChatDemo } from "@/components/ui/chat-demo"
 
 export default function Page() {
-  const pathname = usePathname();
-
   return (
       <SidebarProvider>
         <AppSidebar />

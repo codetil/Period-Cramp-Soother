@@ -14,7 +14,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
 import Footer from '@/components/Footer';
 import Device from "@/components/device"
@@ -24,8 +23,6 @@ import { UserButton } from "@clerk/nextjs"
 import WiFiset from "@/components/wifisetting"
 
 export default function Page() {
-  const pathname = usePathname();
-
   return (
       <SidebarProvider>
         <AppSidebar />

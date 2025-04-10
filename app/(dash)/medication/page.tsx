@@ -14,14 +14,11 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
-import { UserButton, UserProfile } from '@clerk/nextjs'
+import { UserButton } from '@clerk/nextjs'
 import  MeditationExercises  from '@/components/MeditationExercises'
 
 export default function Page() {
-  const pathname = usePathname();
-
   return (
       <SidebarProvider>
         <AppSidebar />

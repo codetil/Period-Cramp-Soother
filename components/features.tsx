@@ -1,13 +1,6 @@
 import { BentoGrid, type BentoItem } from "@/components/ui/bento-grid"
 import { Bot } from "lucide-react";
-import {
-    CheckCircle,
-    Clock,
-    Star,
-    TrendingUp,
-    Video,
-    Globe,
-} from "lucide-react";
+import {CheckCircle,Star,TrendingUp,} from "lucide-react";
 
 
 const itemsSample: BentoItem[] = [
