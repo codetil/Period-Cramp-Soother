@@ -1,8 +1,8 @@
 import { Inter } from 'next/font/google'
 import '@/app/globals.css'
-import { Navbar } from '@/components/navbar'
 import { ThemeProvider } from "@/components/theme-provider"
-import { Footerdemo } from '@/components/ui/footer-section'
+import { SiteHeader } from '@/components/site-header'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,11 +26,11 @@ export default function MainLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
+            <SiteHeader />
             <main className="container mx-auto px-4 py-8">
               {children}
             </main>
-            <Footerdemo/>
+            <Footer/>
           </ThemeProvider>
         </body>
       </html>
