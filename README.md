@@ -1,28 +1,62 @@
 # Period Cramp Soother
 
-A web application designed to provide relief and comfort to individuals experiencing menstrual cramps. The application offers a range of features to help users manage their symptoms, track their cycles, and access resources for better menstrual health.
+A web application designed to help users manage and alleviate period cramps with ease.
+
+## Overview
+
+Period Cramp Soother is a comprehensive solution for tracking, managing, and finding relief from menstrual pain. The application provides personalized recommendations, tracking tools, and educational resources to help users better understand and cope with period cramps.
 
 ## Features
 
-* **Dashboard**: A personalized dashboard to track menstrual cycles, symptoms, and mood.
-* **Chatbot**: An AI-powered chatbot that offers personalized advice and support for managing menstrual symptoms and overall well-being.
-* **Period Tracker Recommendation**: A feature that provides tailored recommendations for tracking menstrual cycles, including period start and end dates, ovulation, and fertile windows based on user input and historical data.
+- **Symptom Tracking**: Log and monitor your period symptoms over time
+- **Pain Relief Recommendations**: Get personalized suggestions based on your symptoms
+- **Educational Resources**: Learn about menstrual health and pain management techniques
+- **Reminder System**: Set up notifications for medication or heat therapy
+- **Dark/Light Mode**: Choose your preferred theme for comfortable viewing
 
-## Technologies Used
+## Technology Stack
 
-* Frontend: Built using Nextjs, TypeScript, and CSS-in-JS styling.
-* Backend: Utilizes a RESTful API built with Node.js, prisma for data storage.
-* Authentication: Implements user authentication and authorization using OAuth and JWT.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn UI Components
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/period-cramp-soother.git
+   ```
+
+2. Install dependencies:
+   ```
+   cd period-cramp-soother
+   npm install
+   ```
+
+3. Run the development server:
+   ```
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## Contributing
 
-Contributions are welcome! If you're interested in helping us improve the Period Cramp Soother, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or fix.
-3. Make your changes and commit them.
-4. Submit a pull request.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-The Period Cramp Soother is licensed under the MIT License.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For any inquiries, please reach out to us through [GitHub](https://github.com/codetil).
