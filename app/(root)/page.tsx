@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Footerdemo } from '@/components/ui/footer-section'
 import { Features } from '@/components/features'
 import { ArrowRightIcon } from "@radix-ui/react-icons";
  
