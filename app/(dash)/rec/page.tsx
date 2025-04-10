@@ -21,7 +21,7 @@ import { Rec } from "@/components/Recommendations"
 
 export default function Page() {
   const pathname = usePathname();
-  const { user } = useUser(); // Get user data from Clerk
+  const { user } = useUser();
 
   const userData = user ? {
     name: user.fullName || "User",

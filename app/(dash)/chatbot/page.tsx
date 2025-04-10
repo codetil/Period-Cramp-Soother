@@ -16,8 +16,8 @@ import {
 } from "@/components/ui/sidebar"
 import { usePathname } from 'next/navigation';
 import { ModeToggle } from "@/components/mode-toggle"
-import { ChatForm } from "@/components/chat-form"
 import { UserButton } from '@clerk/nextjs'
+import { ChatDemo } from "@/components/ui/chat-demo"
 
 export default function Page() {
   const pathname = usePathname();
@@ -49,8 +49,8 @@ export default function Page() {
             </div>
           </div>
         </header>
-          <div className="flex flex-1 flex-col">
-            <ChatForm />
+          <div className="flex flex-1 flex-col p-10 m-4">
+            <ChatDemo />
           </div>
         </SidebarInset>
       </SidebarProvider>
