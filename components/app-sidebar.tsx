@@ -2,13 +2,9 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
   BookOpen,
   Bot,
   Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
   PieChart,
   Settings2,
   SquareTerminal,
@@ -30,9 +26,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { Footprints } from "lucide-react"
-import { title } from "process"
 
-// This is sample data.
 const data = {
   
   teams: [
@@ -65,6 +59,11 @@ const data = {
       ]
     },
     {
+      title: "AI Chatbot",
+      url: "/chatbot",
+      icon: Bot,
+    },
+    {
       title: "Medication",
       url: "/medication",
       icon: Command,
@@ -74,12 +73,6 @@ const data = {
       url: "/rec",
       icon: PieChart,
     },
-    {
-      title: "AI Chatbot",
-      url: "/chatbot",
-      icon: Bot,
-    },
-
     {
       title : "Near by Washroom",
       url: "/washroom",
