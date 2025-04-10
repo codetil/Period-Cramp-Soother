@@ -162,7 +162,6 @@
     @apply bg-background text-foreground;
   }
 }
-
 @theme inline {
   @keyframes shiny-text {
   0%, 90%, 100% {
