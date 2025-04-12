@@ -52,7 +52,7 @@ export function ChatDemo(props: ChatDemoProps) {
   })) as Message[]
  
   return (
-    <div className={cn("flex", "flex-col", "h-[500px]", "w-full")}>
+    <div className={cn("flex", "flex-col", "h-[680px]", "w-full")}>
       <div className={cn("flex", "justify-end", "mb-2")}>
       </div>
  
