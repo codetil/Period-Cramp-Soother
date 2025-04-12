@@ -46,7 +46,7 @@ export default function Page() {
             </div>
           </div>
         </header>
-          <div className="flex flex-1 flex-col p-10 m-4">
+          <div className="flex p-3" >
             <ChatDemo />
           </div>
         </SidebarInset>
