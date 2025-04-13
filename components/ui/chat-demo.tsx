@@ -52,8 +52,17 @@ export function ChatDemo(props: ChatDemoProps) {
   })) as Message[]
  
   return (
-    <div className={cn("flex", "flex-col", "h-[680px]", "w-full")}>
-      <div className={cn("flex", "justify-end", "mb-2")}>
+    <div className={cn(
+      "flex",
+      "flex-col",
+      "min-h-[90vh]",
+      "h-[calc(100vh-12rem)]",
+      "w-full",
+      "max-w-full",
+      "",
+      "px-4",
+    )}>
+      <div className={cn("flex", "justify-end", "mb-2", "w-full")}>
       </div>
  
       <Chat
@@ -67,9 +76,9 @@ export function ChatDemo(props: ChatDemoProps) {
         append={append}
         setMessages={setMessages}
         suggestions={[
-          "What are some effective self-care practices for women's health?",
-          "How can I improve my energy levels naturally?",
-          "What dietary changes can help with hormonal balance?",
+          "Natural energy boosters?",
+          "Self-care practices for women's health?",
+          "Diet for hormonal balance?",
         ]}
       />
     </div>

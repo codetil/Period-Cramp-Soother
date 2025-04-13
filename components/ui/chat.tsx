@@ -194,11 +194,13 @@ export function Chat({
   return (
     <ChatContainer className={className}>
       {isEmpty && append && suggestions ? (
-        <PromptSuggestions
-          label="Love to help ✨"
-          append={append}
-          suggestions={suggestions}
-        />
+        <div className="flex justify-center pt-4">
+          <PromptSuggestions
+            label="Love to help ✨"
+            append={append}
+            suggestions={suggestions}
+          />
+        </div>
       ) : null}
 
       {messages.length > 0 ? (
@@ -250,12 +252,15 @@ export function ChatMessages({
 
   return (
     <div
-      className="grid grid-cols-1 overflow-y-auto pb-4"
+      className={cn(
+        "grid grid-cols-1 overflow-y-auto pb-4 px-2 sm:px-4",
+        "scrollbar-thin scrollbar-thumb-gray-200 dark:scrollbar-thumb-gray-800"
+      )}
       ref={containerRef}
       onScroll={handleScroll}
       onTouchStart={handleTouchStart}
     >
-      <div className="max-w-full [grid-column:1/1] [grid-row:1/1]">
+      <div className="max-w-full w-full mx-auto [grid-column:1/1] [grid-row:1/1]">
         {children}
       </div>
 
@@ -284,7 +289,12 @@ export const ChatContainer = forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("grid max-h-full w-full grid-rows-[1fr_auto]", className)}
+      className={cn(
+        "grid max-h-full w-full grid-rows-[1fr_auto]",
+        "gap-2 sm:gap-4",
+        "p-2 sm:p-4",
+        className
+      )}
       {...props}
     />
   )
