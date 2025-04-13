@@ -26,8 +26,8 @@ Period Cramp Soother is a comprehensive solution for tracking, managing, and fin
 
 ### Prerequisites
 
-- Node.js (v14 or later)
-- npm or yarn
+- Bun
+
 
 ### Installation
 
@@ -39,12 +39,12 @@ Period Cramp Soother is a comprehensive solution for tracking, managing, and fin
 2. Install dependencies:
    ```
    cd period-cramp-soother
-   npm install
+   bun install
    ```
 
 3. Run the development server:
    ```
-   npm run dev
+   bun dev
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
