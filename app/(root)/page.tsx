@@ -31,7 +31,7 @@ export default function Home() {
     
     </h1>
         <p className="text-xl mb-8 text-center max-w-2xl">
-          Manage and alleviate period cramps with our web+Haware-based solution. 
+          Manage and alleviate period cramps with our "web+Hardware" based solution. 
           Track your frequency levels, periods dates, and receive personalized recommendations.
         </p>
         <div className="flex space-x-4 justify-center">
