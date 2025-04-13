@@ -4,7 +4,7 @@
   "description": "A companion app to help manage and relieve period cramps",
   "start_url": "/",
   "scope": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#f472b6",
   "background_color": "#ffffff",
