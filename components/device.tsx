@@ -16,7 +16,7 @@ export default function Device() {
 <Card >
     <main className="flex items-center justify-center p-4">
       <div className=" overflow-hidden max-w-2xl w-full">
-      <WiFiset/>
+      {/* <WiFiset/> */}
         <div className="p-6 ">
           <h1 className="text-2xl font-bold text-center">Device Control</h1>
         </div>

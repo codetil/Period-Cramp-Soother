@@ -44,10 +44,15 @@ Period Cramp Soother is a comprehensive solution for tracking, managing, and fin
 
 3. Run the development server:
    ```
-   bun dev
+   bun run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+4. For production build
+   ```
+   bun run build
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## Contributing
 
@@ -60,3 +65,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 For any inquiries, please reach out to us through [GitHub](https://github.com/codetil).
+
