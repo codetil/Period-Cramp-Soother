@@ -27,7 +27,7 @@ export default function Device() {
             <div className="flex flex-col">
 
               <Button
-                onClick={() => window.location.href = 'http://192.168.27.118'}
+                onClick={() => window.location.href = 'http://192.168.15.118'}
                 className="w-full"
               >
                 Connect to device
