@@ -64,8 +64,8 @@ const data = {
       icon: Bot,
     },
     {
-      title: "Medication",
-      url: "/medication",
+      title: "Meditation",
+      url: "/meditation",
       icon: Command,
     },
     {
