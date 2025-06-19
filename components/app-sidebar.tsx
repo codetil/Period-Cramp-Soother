@@ -65,7 +65,7 @@ const data = {
     },
     {
       title: "Meditation",
-      url: "/meditation",
+      url: "/medication",
       icon: Command,
     },
     {
