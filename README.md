@@ -129,10 +129,6 @@ We welcome contributions! Here's how to get started:
 - [ ] Social community features
 - [ ] Advanced analytics dashboard
 
-##  License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
----
 
 <div align="center">
   <p><strong>Built with ❤️ for women's health empowerment</strong></p>
