@@ -42,9 +42,7 @@ export default function WashroomPage() {
           };
           setUserLocation(userPos);
           
-          // In a real application, you would make an API call to a service that provides nearby washrooms
-          // For example, using Google Places API or Overpass API (OpenStreetMap)
-          // This is a mock implementation
+          // Make API call to fetch nearby washrooms based on user location
           fetchNearbyWashrooms(userPos.lat, userPos.lng);
         },
         (err) => {
@@ -60,24 +58,22 @@ export default function WashroomPage() {
 
   const fetchNearbyWashrooms = async (lat: number, lng: number) => {
     try {
-      // Mock API call - in a real implementation you would call an actual API
-      // const response = await fetch(`/api/washrooms?lat=${lat}&lng=${lng}`);
-      // const data = await response.json();
+      const response = await fetch(`/api/washrooms?lat=${lat}&lng=${lng}`);
       
-      // Simulating API response with mock data
-      setTimeout(() => {
-        const mockWashrooms = [
-          { id: 1, name: "Public Restroom - City Park", distance: "0.3 km", address: "123 Park Avenue" },
-          { id: 2, name: "Shopping Mall Washroom", distance: "0.7 km", address: "456 Main Street" },
-          { id: 3, name: "Coffee Shop Restroom", distance: "1.1 km", address: "789 Oak Road" },
-          { id: 4, name: "Gas Station Bathroom", distance: "1.5 km", address: "101 Highway Avenue" }
-        ];
-        
-        setWashrooms(mockWashrooms);
-        setLoading(false);
-      }, 1500);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       
+      const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      
+      setWashrooms(data.washrooms || []);
+      setLoading(false);
     } catch (error) {
+      console.error('Error fetching washrooms:', error);
       setError("Failed to fetch nearby washrooms. Please try again.");
       setLoading(false);
     }
